@@ -23,7 +23,7 @@ spark-submit  ---class com.esri.kafka.KafkaProducer target\jar-file-with-depende
 
 
 #We will use Avro to serialze/deserialize the tweets
-<code>
+'''
 {
 	"namespace": "com.esri.avro",
 	"type": "record",
@@ -35,7 +35,7 @@ spark-submit  ---class com.esri.kafka.KafkaProducer target\jar-file-with-depende
 		{"name": "score", "type": "int", "default" : 0 }		
 	]
 }
-</code>
+'''
 
 #Verify the tweets using kafka console consumer
 kafka-console-consumer --zookeeper localhost:2181 --topic tweets2
@@ -45,7 +45,7 @@ bin\elasticsearch
 
 #go to marvel sense UI, http://localhost:9200/_plugin/marvel/sense/
 #Create usertweets index using marvel
-<code>
+'''
 POST user_tweets
 {
   "settings": {
@@ -72,7 +72,7 @@ POST user_tweets
     }
   }
 }
-</code>
+'''
 
 #Running Kafka consumer to populate search index with scored tweets
 spark-submit  ---class com.esri.kafka.KafkaConsumer target\jar-file-with-dependencies
