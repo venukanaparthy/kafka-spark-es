@@ -1,0 +1,12 @@
+{
+	"namespace": "com.esri.avro",
+	"type": "record",
+	"name": "Tweet",
+	"fields": [
+		{"name": "name", "type": "string"},
+		{"name": "text", "type": "string", "avro.java.string": "String" },
+		{"name": "language", "type": "string", "avro.java.string": "String" },
+		{"name": "score", "type": "int", "default" : 0 }
+		
+	]
+}
